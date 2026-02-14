@@ -10,6 +10,12 @@ import Gallery from "@/pages/Gallery";
 import Admission from "@/pages/Admission";
 import Contact from "@/pages/Contact";
 import Login from "@/pages/Login";
+import AlumniNetwork from "@/pages/AlumniNetwork";
+import Curriculum from "@/pages/Curriculum";
+import Faculty from "@/pages/Faculty";
+import Results from "@/pages/Results";
+import SportsActivities from "@/pages/SportsActivities";
+import SchoolCalendar from "@/pages/SchoolCalendar";
 
 function Router() {
   return (
@@ -20,6 +26,12 @@ function Router() {
       <Route path="/admission" component={Admission} />
       <Route path="/contact" component={Contact} />
       <Route path="/login" component={Login} />
+      <Route path="/alumni" component={AlumniNetwork} />
+      <Route path="/curriculum" component={Curriculum} />
+      <Route path="/faculty" component={Faculty} />
+      <Route path="/results" component={Results} />
+      <Route path="/sports-activities" component={SportsActivities} />
+      <Route path="/calendar" component={SchoolCalendar} />
       <Route component={NotFound} />
     </Switch>
   );

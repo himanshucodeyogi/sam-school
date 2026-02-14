@@ -6,10 +6,15 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const navLinks = [
   { name: "Home", path: "/" },
-  { name: "About Us", path: "/about" },
+  { name: "Curriculum", path: "/curriculum" },
+  { name: "Faculty", path: "/faculty" },
+  { name: "Results", path: "/results" },
+  { name: "Sports", path: "/sports-activities" },
+  { name: "Calendar", path: "/calendar" },
   { name: "Gallery", path: "/gallery" },
   { name: "Admission", path: "/admission" },
   { name: "Contact", path: "/contact" },
+  { name: "Alumni", path: "/alumni" },
 ];
 
 export function Navbar() {
