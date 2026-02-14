@@ -26,8 +26,8 @@ export function Navbar() {
             <span className="flex items-center gap-1"><Mail size={14} /> info@smintercollege.edu.in</span>
           </div>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-accent transition-colors">Student Login</a>
-            <a href="#" className="hover:text-accent transition-colors">Staff Login</a>
+            <Link href="/login" className="hover:text-accent transition-colors">Student Login</Link>
+            <Link href="/login" className="hover:text-accent transition-colors">Staff Login</Link>
           </div>
         </div>
       </div>
@@ -86,6 +86,10 @@ export function Navbar() {
                     </a>
                   </Link>
                 ))}
+                <div className="h-px bg-slate-100 my-2" />
+                <Link href="/login" onClick={() => setIsOpen(false)}>
+                  <a className="text-lg font-medium text-muted-foreground">Login Portals</a>
+                </Link>
                 <Link href="/admission" onClick={() => setIsOpen(false)}>
                   <Button className="w-full mt-4">Apply Now</Button>
                 </Link>
