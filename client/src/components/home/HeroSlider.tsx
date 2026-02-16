@@ -120,18 +120,7 @@ export function HeroSlider() {
         </button>
       </div>
 
-      {/* Progress Indicators */}
-      <div className="absolute bottom-12 left-12 z-30 flex gap-3">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            className={`h-1.5 transition-all duration-500 rounded-full ${
-              current === i ? "w-12 bg-accent" : "w-6 bg-white/30 hover:bg-white/50"
-            }`}
-          />
-        ))}
-      </div>
+     
     </div>
   );
 }
