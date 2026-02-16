@@ -87,10 +87,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-bold mb-4 font-serif text-slate-800">{feature.title}</h3>
                 <p className="text-slate-600 leading-relaxed text-lg mb-6">{feature.desc}</p>
-                <Link href="/about">
-                  <a className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-4 transition-all duration-300">
+                <Link href="/about" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-4 transition-all duration-300">
                     Discover More <ArrowRight size={18} className="text-accent" />
-                  </a>
                 </Link>
               </motion.div>
             ))}
