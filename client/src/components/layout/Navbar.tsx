@@ -39,28 +39,24 @@ export function Navbar() {
 
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/">
-          <a className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3">
             <img src="/images/logo.png" alt="S.M. Inter College Logo" className="h-10 w-10 object-contain" />
             <div className="flex flex-col">
               <span className="font-serif font-bold text-xl leading-none text-primary">S.M. Inter College</span>
               <span className="text-[10px] tracking-wider text-muted-foreground uppercase">Saharanpur • Est. 1975</span>
             </div>
-          </a>
         </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.slice(0, 7).map((link) => (
-            <Link key={link.path} href={link.path}>
-              <a className={`text-sm font-bold uppercase tracking-widest transition-all duration-300 hover:text-accent relative group ${
+            <Link key={link.path} href={link.path} className={`text-sm font-bold uppercase tracking-widest transition-all duration-300 hover:text-accent relative group ${
                 location === link.path ? "text-primary" : "text-slate-500"
               }`}>
                 {link.name}
                 <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full ${
                   location === link.path ? "w-full" : ""
                 }`} />
-              </a>
             </Link>
           ))}
           <Link href="/admission">
@@ -85,20 +81,20 @@ export function Navbar() {
                   <span className="font-serif font-bold text-lg">S.M. Inter College</span>
                 </div>
                 {navLinks.map((link) => (
-                  <Link key={link.path} href={link.path}>
-                    <a 
-                      onClick={() => setIsOpen(false)}
-                      className={`text-lg font-medium ${
-                        location === link.path ? "text-primary" : "text-muted-foreground"
-                      }`}
-                    >
+                  <Link 
+                    key={link.path} 
+                    href={link.path}
+                    onClick={() => setIsOpen(false)}
+                    className={`text-lg font-medium ${
+                      location === link.path ? "text-primary" : "text-muted-foreground"
+                    }`}
+                  >
                       {link.name}
-                    </a>
                   </Link>
                 ))}
                 <div className="h-px bg-slate-100 my-2" />
-                <Link href="/login" onClick={() => setIsOpen(false)}>
-                  <a className="text-lg font-medium text-muted-foreground">Login Portals</a>
+                <Link href="/login" onClick={() => setIsOpen(false)} className="text-lg font-medium text-muted-foreground">
+                  Login Portals
                 </Link>
                 <Link href="/admission" onClick={() => setIsOpen(false)}>
                   <Button className="w-full mt-4">Apply Now</Button>
