@@ -27,10 +27,10 @@ export function Footer() {
           <div>
             <h3 className="font-serif font-bold text-lg text-white mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/about"><a className="hover:text-white transition-colors">About Us</a></Link></li>
-              <li><Link href="/admission"><a className="hover:text-white transition-colors">Admission Info</a></Link></li>
-              <li><Link href="/gallery"><a className="hover:text-white transition-colors">Campus Gallery</a></Link></li>
-              <li><Link href="/contact"><a className="hover:text-white transition-colors">Contact Support</a></Link></li>
+              <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
+              <li><Link href="/admission" className="hover:text-white transition-colors">Admission Info</Link></li>
+              <li><Link href="/gallery" className="hover:text-white transition-colors">Campus Gallery</Link></li>
+              <li><Link href="/contact" className="hover:text-white transition-colors">Contact Support</Link></li>
               <li><a href="#" className="hover:text-white transition-colors">Alumni Network</a></li>
             </ul>
           </div>
