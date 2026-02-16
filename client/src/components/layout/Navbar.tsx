@@ -50,18 +50,23 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-6">
-          {navLinks.map((link) => (
+        <div className="hidden md:flex items-center gap-8">
+          {navLinks.slice(0, 7).map((link) => (
             <Link key={link.path} href={link.path}>
-              <a className={`text-sm font-medium transition-colors hover:text-primary ${
-                location === link.path ? "text-primary font-bold border-b-2 border-primary" : "text-muted-foreground"
+              <a className={`text-sm font-bold uppercase tracking-widest transition-all duration-300 hover:text-accent relative group ${
+                location === link.path ? "text-primary" : "text-slate-500"
               }`}>
                 {link.name}
+                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full ${
+                  location === link.path ? "w-full" : ""
+                }`} />
               </a>
             </Link>
           ))}
           <Link href="/admission">
-            <Button size="sm" className="bg-primary hover:bg-primary/90 text-white shadow-md">Apply Now</Button>
+            <Button size="default" className="bg-primary hover:bg-accent hover:text-primary-foreground text-white shadow-lg transition-all duration-300 rounded-full px-8">
+              Apply Now
+            </Button>
           </Link>
         </div>
 

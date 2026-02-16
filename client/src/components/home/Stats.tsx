@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Users, GraduationCap, Building2, Trophy } from "lucide-react";
 
 const stats = [
@@ -9,20 +10,24 @@ const stats = [
 
 export function Stats() {
   return (
-    <section className="py-16 bg-slate-50">
+    <section className="py-20 bg-slate-50">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
-            <div 
-              key={index} 
-              className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex flex-col items-center text-center hover:shadow-md transition-shadow group"
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center hover:shadow-xl transition-all duration-300 group"
             >
-              <div className={`p-4 rounded-full bg-slate-50 mb-4 group-hover:bg-slate-100 transition-colors ${stat.color}`}>
-                <stat.icon className="h-8 w-8" />
+              <div className={`p-5 rounded-2xl bg-slate-50 mb-6 group-hover:scale-110 group-hover:bg-white transition-all duration-300 ${stat.color}`}>
+                <stat.icon className="h-10 w-10" />
               </div>
-              <h3 className="text-3xl font-bold text-slate-900 mb-1 font-serif">{stat.value}</h3>
-              <p className="text-sm font-medium text-slate-500 uppercase tracking-wide">{stat.label}</p>
-            </div>
+              <h3 className="text-4xl font-bold text-slate-900 mb-2 font-serif">{stat.value}</h3>
+              <p className="text-sm font-bold text-slate-500 uppercase tracking-[0.15em]">{stat.label}</p>
+            </motion.div>
           ))}
         </div>
       </div>

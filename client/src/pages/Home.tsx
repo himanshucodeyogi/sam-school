@@ -5,6 +5,29 @@ import { Stats } from "@/components/home/Stats";
 import { PrincipalMessage } from "@/components/home/PrincipalMessage";
 import { ArrowRight, BookOpen, GraduationCap, Users } from "lucide-react";
 import { Link } from "wouter";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const itemVariants: any = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1]
+    }
+  }
+};
 
 export default function Home() {
   return (
@@ -13,16 +36,29 @@ export default function Home() {
       <HeroSlider />
       
       {/* Intro Section */}
-      <section className="py-20 bg-white text-center">
+      <section className="py-24 bg-white text-center overflow-hidden">
         <div className="container mx-auto px-4">
-          <span className="text-accent font-bold uppercase tracking-widest text-sm mb-2 block">Welcome</span>
-          <h2 className="text-4xl font-serif font-bold text-primary mb-6">A Tradition of Excellence</h2>
-          <p className="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed mb-12">
-            S.M. Inter College stands as a beacon of learning in Saharanpur, offering world-class education 
-            rooted in values. We inspire students to dream, learn, and achieve.
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className="text-accent font-bold uppercase tracking-[0.2em] text-xs mb-4 block">Welcome to Excellence</span>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary mb-8 leading-tight">A Tradition of <span className="text-accent italic">Excellence</span></h2>
+            <p className="text-slate-600 max-w-3xl mx-auto text-xl leading-relaxed mb-16 font-light">
+              S.M. Inter College stands as a beacon of learning in Saharanpur, offering world-class education 
+              rooted in values. We inspire students to dream, learn, and achieve.
+            </p>
+          </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-10 text-left"
+          >
             {[
               { 
                 icon: BookOpen, 
@@ -40,20 +76,25 @@ export default function Home() {
                 desc: "Dedicated teachers mentoring students to achieve their full potential." 
               }
             ].map((feature, i) => (
-              <div key={i} className="p-8 rounded-xl bg-slate-50 hover:bg-white hover:shadow-xl transition-all border border-slate-100 group">
-                <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
-                  <feature.icon className="h-7 w-7 text-primary group-hover:text-white transition-colors" />
+              <motion.div 
+                key={i} 
+                variants={itemVariants}
+                className="p-10 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500 group relative overflow-hidden"
+              >
+                <div className="absolute top-0 left-0 w-1 h-0 bg-accent group-hover:h-full transition-all duration-500" />
+                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary group-hover:scale-110 transition-all duration-500 rotate-3 group-hover:rotate-0">
+                  <feature.icon className="h-8 w-8 text-primary group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 font-serif">{feature.title}</h3>
-                <p className="text-slate-600 leading-relaxed">{feature.desc}</p>
+                <h3 className="text-2xl font-bold mb-4 font-serif text-slate-800">{feature.title}</h3>
+                <p className="text-slate-600 leading-relaxed text-lg mb-6">{feature.desc}</p>
                 <Link href="/about">
-                  <a className="inline-flex items-center gap-2 mt-4 text-primary font-medium hover:gap-3 transition-all">
-                    Read More <ArrowRight size={16} />
+                  <a className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-4 transition-all duration-300">
+                    Discover More <ArrowRight size={18} className="text-accent" />
                   </a>
                 </Link>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -62,25 +103,43 @@ export default function Home() {
       <PrincipalMessage />
       
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+      <section className="py-24 bg-primary text-white relative overflow-hidden">
+        <motion.div 
+          initial={{ scale: 1.2, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 0.15 }}
+          transition={{ duration: 1.5 }}
+          className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"
+        ></motion.div>
+        
+        {/* Decorative elements */}
+        <div className="absolute top-[-10%] left-[-10%] w-64 h-64 bg-accent/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-blue-400/10 rounded-full blur-3xl"></div>
+
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6">Join Our Community</h2>
-          <p className="text-blue-100 max-w-2xl mx-auto text-lg mb-8">
-            Admissions are open for the upcoming academic session. Give your child the gift of quality education.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/admission">
-              <button className="bg-accent text-primary-foreground hover:bg-accent/90 px-8 py-4 rounded-md font-bold text-lg transition-transform hover:scale-105 shadow-lg">
-                Apply for Admission
-              </button>
-            </Link>
-            <Link href="/contact">
-              <button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 rounded-md font-bold text-lg transition-colors">
-                Contact Us
-              </button>
-            </Link>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl md:text-6xl font-serif font-bold mb-8 leading-tight">Start Your <span className="text-accent italic">Journey</span> With Us</h2>
+            <p className="text-blue-100 max-w-3xl mx-auto text-xl mb-12 font-light leading-relaxed">
+              Admissions are open for the upcoming academic session. Join a legacy of learners and give your child the foundation for a brilliant future.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Link href="/admission">
+                <button className="group bg-accent text-primary-foreground hover:bg-white hover:text-primary px-10 py-5 rounded-full font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-accent/40 flex items-center gap-2">
+                  Apply for Admission
+                  <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+                </button>
+              </Link>
+              <Link href="/contact">
+                <button className="bg-transparent border-2 border-white/30 text-white hover:border-white hover:bg-white/10 px-10 py-5 rounded-full font-bold text-lg transition-all duration-300 backdrop-blur-sm">
+                  Talk to Us
+                </button>
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
     </Layout>
