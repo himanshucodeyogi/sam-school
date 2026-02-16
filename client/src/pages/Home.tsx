@@ -127,16 +127,12 @@ export default function Home() {
               Admissions are open for the upcoming academic session. Join a legacy of learners and give your child the foundation for a brilliant future.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Link href="/admission">
-                <button className="group bg-accent text-primary-foreground hover:bg-white hover:text-primary px-10 py-5 rounded-full font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-accent/40 flex items-center gap-2">
+              <Link href="/admission" className="group bg-accent text-primary-foreground hover:bg-white hover:text-primary px-10 py-5 rounded-full font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-accent/40 flex items-center gap-2 whitespace-nowrap">
                   Apply for Admission
-                  <ArrowRight className="group-hover:translate-x-2 transition-transform" />
-                </button>
+                  <ArrowRight className="group-hover:translate-x-2 transition-transform shrink-0" />
               </Link>
-              <Link href="/contact">
-                <button className="bg-transparent border-2 border-white/30 text-white hover:border-white hover:bg-white/10 px-10 py-5 rounded-full font-bold text-lg transition-all duration-300 backdrop-blur-sm">
+              <Link href="/contact" className="bg-transparent border-2 border-white/30 text-white hover:border-white hover:bg-white/10 px-10 py-5 rounded-full font-bold text-lg transition-all duration-300 backdrop-blur-sm whitespace-nowrap">
                   Talk to Us
-                </button>
               </Link>
             </div>
           </motion.div>

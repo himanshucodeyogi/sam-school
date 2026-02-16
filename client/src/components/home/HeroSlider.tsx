@@ -90,17 +90,13 @@ export function HeroSlider() {
               <p className="text-xl text-blue-100/80 mb-10 leading-relaxed font-light max-w-xl">
                 {slides[current].description}
               </p>
-              <div className="flex flex-wrap gap-6">
-                <Link href={slides[current].link}>
-                  <Button size="lg" className="bg-accent hover:bg-white hover:text-primary text-primary-foreground font-bold px-10 py-7 rounded-full text-lg shadow-2xl hover:shadow-accent/40 transition-all duration-300 group whitespace-nowrap min-w-max">
+              <div className="flex flex-col sm:flex-row gap-6">
+                <Link href={slides[current].link} className="bg-accent hover:bg-white hover:text-primary text-primary-foreground font-bold px-10 py-5 rounded-full text-lg shadow-2xl hover:shadow-accent/40 transition-all duration-300 group flex items-center justify-center gap-2 whitespace-nowrap min-w-max">
                     {slides[current].cta}
-                    <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform shrink-0" />
-                  </Button>
+                    <ArrowRight className="group-hover:translate-x-2 transition-transform shrink-0" />
                 </Link>
-                <Link href="/contact">
-                  <Button size="lg" variant="outline" className="border-2 border-white/30 text-white hover:bg-white/10 px-10 py-7 rounded-full text-lg backdrop-blur-sm transition-all duration-300">
+                <Link href="/contact" className="border-2 border-white/30 text-white hover:bg-white/10 px-10 py-5 rounded-full text-lg backdrop-blur-sm transition-all duration-300 font-bold flex items-center justify-center whitespace-nowrap">
                     Contact Us
-                  </Button>
                 </Link>
               </div>
             </motion.div>
