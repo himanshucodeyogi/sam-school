@@ -59,7 +59,7 @@ export function Navbar() {
                 }`} />
             </Link>
           ))}
-          <Link href="/admission">
+          <Link href="/admission" className="no-underline">
             <Button size="default" className="bg-primary hover:bg-accent hover:text-primary-foreground text-white shadow-lg transition-all duration-300 rounded-full px-8">
               Apply Now
             </Button>
@@ -96,7 +96,7 @@ export function Navbar() {
                 <Link href="/login" onClick={() => setIsOpen(false)} className="text-lg font-medium text-muted-foreground">
                   Login Portals
                 </Link>
-                <Link href="/admission" onClick={() => setIsOpen(false)}>
+                <Link href="/admission" onClick={() => setIsOpen(false)} className="block">
                   <Button className="w-full mt-4">Apply Now</Button>
                 </Link>
               </div>

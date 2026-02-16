@@ -90,12 +90,12 @@ export function HeroSlider() {
               <p className="text-xl text-blue-100/80 mb-10 leading-relaxed font-light max-w-xl">
                 {slides[current].description}
               </p>
-              <div className="flex flex-col sm:flex-row gap-6">
-                <Link href={slides[current].link} className="bg-accent hover:bg-white hover:text-primary text-primary-foreground font-bold px-10 py-5 rounded-full text-lg shadow-2xl hover:shadow-accent/40 transition-all duration-300 group flex items-center justify-center gap-2 whitespace-nowrap min-w-max">
+              <div className="flex flex-col sm:flex-row gap-6 mt-4">
+                <Link href={slides[current].link} className="bg-accent hover:bg-white hover:text-primary text-primary-foreground font-bold px-10 py-5 rounded-full text-lg shadow-2xl hover:shadow-accent/40 transition-all duration-300 group flex items-center justify-center gap-2 whitespace-nowrap min-w-[200px]">
                     {slides[current].cta}
                     <ArrowRight className="group-hover:translate-x-2 transition-transform shrink-0" />
                 </Link>
-                <Link href="/contact" className="border-2 border-white/30 text-white hover:bg-white/10 px-10 py-5 rounded-full text-lg backdrop-blur-sm transition-all duration-300 font-bold flex items-center justify-center whitespace-nowrap">
+                <Link href="/contact" className="border-2 border-white/30 text-white hover:bg-white/10 px-10 py-5 rounded-full text-lg backdrop-blur-sm transition-all duration-300 font-bold flex items-center justify-center whitespace-nowrap min-w-[200px]">
                     Contact Us
                 </Link>
               </div>
