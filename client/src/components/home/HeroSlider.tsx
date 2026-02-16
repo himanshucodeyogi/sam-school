@@ -92,9 +92,9 @@ export function HeroSlider() {
               </p>
               <div className="flex flex-wrap gap-6">
                 <Link href={slides[current].link}>
-                  <Button size="lg" className="bg-accent hover:bg-white hover:text-primary text-primary-foreground font-bold px-10 py-7 rounded-full text-lg shadow-2xl hover:shadow-accent/40 transition-all duration-300 group">
+                  <Button size="lg" className="bg-accent hover:bg-white hover:text-primary text-primary-foreground font-bold px-10 py-7 rounded-full text-lg shadow-2xl hover:shadow-accent/40 transition-all duration-300 group whitespace-nowrap min-w-max">
                     {slides[current].cta}
-                    <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" />
+                    <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform shrink-0" />
                   </Button>
                 </Link>
                 <Link href="/contact">
