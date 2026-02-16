@@ -91,7 +91,7 @@ export function HeroSlider() {
                 {slides[current].description}
               </p>
               <div className="flex flex-col sm:flex-row gap-6 mt-4">
-                <Link href={slides[current].link} className="bg-accent hover:bg-white hover:text-primary text-primary-foreground font-bold px-10 py-5 rounded-full text-lg shadow-2xl hover:shadow-accent/40 transition-all duration-300 group flex items-center justify-center gap-2 whitespace-nowrap min-w-[200px]">
+                <Link href={slides[current].link} className="bg-white hover:bg-slate-50 text-primary font-bold px-10 py-5 rounded-full text-lg shadow-xl transition-all duration-300 group flex items-center justify-center gap-2 whitespace-nowrap min-w-[200px]">
                     {slides[current].cta}
                     <ArrowRight className="group-hover:translate-x-2 transition-transform shrink-0" />
                 </Link>
